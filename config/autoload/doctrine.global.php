@@ -9,6 +9,8 @@ return array(
                     'host' => 'ec2-54-225-199-108.compute-1.amazonaws.com',
                     'port' => '5432',
                     'dbname' => 'd9quivfc4499v1',
+                    'user' => $_ENV["KICKER_USER"],
+                    'password' => $_ENV["KICKER_PASSWORD"],
                 ),
             ),
         ),

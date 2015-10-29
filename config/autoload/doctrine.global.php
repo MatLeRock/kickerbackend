@@ -8,7 +8,7 @@ return array(
                 'params' => array(
                     'host' => 'localhost',
 //                        'port' => '3306',
-                    'dbname' => 'kicker_league',
+                    'dbname' => 'd9quivfc4499v1',
                 ),
             ),
         ),

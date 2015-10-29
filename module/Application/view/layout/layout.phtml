@@ -1,0 +1,43 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('ZF2 ' . $this->translate('Sticky Notes'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                ->prependStylesheet($this->basePath('css/style.css'))
+                ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+                ->appendStylesheet($this->basePath('css/kicker.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->basePath('js/libs/bootstrap.min.js'))
+                ->prependFile($this->basePath('js/libs/jquery.min.js'))
+                ->prependFile($this->basePath('js/libs/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+                ->prependFile($this->basePath('js/libs/html5shiv.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+                ->appendFile($this->basePath('js/libs/angular.min.js'), 'text/javascript')
+                ->appendFile($this->basePath('js/libs/angular-route.js'), 'text/javascript')
+                ->appendFile($this->basePath('js/app/app.js'), 'text/javascript')
+                 ->appendFile($this->basePath('js/app/controllers/newUserController.js'), 'text/javascript')
+        ?>
+
+    </head>
+    <body data-ng-app="tutorialApp">
+        <div class="container">
+            <?php echo $this->content; ?>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

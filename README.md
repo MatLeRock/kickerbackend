@@ -42,3 +42,9 @@ Doctrine commands
 cd root-folder
 vendor\bin\doctrine-module  orm:validate-schema         | Test sync of Code (entities) and DB-Schema
                             orm:schema-tool:create      | Creates DB-schema
+
+Swagger Docs
+----------------
+http://www.davenewson.com/tutorials/php/rest-api-documentation-in-zend-framework-2-with-swagger
+https://github.com/outeredge/SwaggerModule
+http://zircote.com/swagger-php

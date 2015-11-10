@@ -5,10 +5,15 @@ namespace Kicker\Controller;
 use Zend\View\Model\JsonModel;
 //use Kicker\Model\Entity\Game;
 use Kicker\Entity\Game;
-use Doctrine\Common\Collections\ArrayCollection;
 use Kicker\Entity\GameLink;
-use Kicker\Entity\User;
+use Swagger\Annotations as SWG;
 
+/**
+ * @SWG\Resource(
+ *     apiVersion="0.1",
+ *     resourcePath="/game") 
+ *  
+ */
 class GameController extends \Kicker\CorsRestfulController {
 
     protected $_gamesTable;
@@ -30,8 +35,30 @@ class GameController extends \Kicker\CorsRestfulController {
         return $this->_users2gamesTable;
     }
 
+    /**
+     *
+     * @SWG\Api(
+     *   path="/game",
+     *   description="Operations about pets",
+     *   @SWG\Operation(
+     *      method="GET", 
+     *      summary="Fetch games", 
+     *      notes="Returns list of games. Paginated with index and size",
+     *      type="List", 
+     *      nickname="getList",
+     *      @SWG\ResponseMessage(code=404, message="Pet not found"),
+     *      @SWG\Parameter(
+     *              paramType="query",
+     *              name="index",
+     *              description="ID of pet that needs to be fetched",
+     *              required=false,
+     *              type="integer"
+     *          )       
+     *      )
+     *  )
+     */
     public function getList() {
-
+        
         $index = (int) $this->request->getQuery()->get("index", 0);
         $size = (int) $this->request->getQuery()->get("size", 10);
 
@@ -66,6 +93,25 @@ class GameController extends \Kicker\CorsRestfulController {
         ));
     }
 
+     /**
+     *
+     * @SWG\Api(
+     *   @SWG\Operation(
+     *      method="POST", 
+     *      summary="Create game", 
+     *      notes="Returns list of games. Paginated with index and size",
+     *      type="List", 
+     *      @SWG\ResponseMessage(code=404, message="Pet not found"),
+     *      @SWG\Parameter(
+     *              paramType="body",
+     *              name="data",
+     *              description="ID of pet that needs to be fetched",
+     *              required=true,
+     *              type="array"
+     *          )       
+     *      )
+     *  )
+     */
     public function create($data) {
 
         if (!$this->isAuthenticated()) {
@@ -195,8 +241,6 @@ class GameController extends \Kicker\CorsRestfulController {
 
         $em->persist($game);
         $em->flush();
-//        var_dump($id);
-//        var_dump($data);
         return new JsonModel(array(
             'data' => $game->toArray()
         ));

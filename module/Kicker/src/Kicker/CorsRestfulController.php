@@ -86,9 +86,14 @@ class CorsRestfulController extends AbstractRestfulController {
         );
 
         $adapter = new Http($config);
-        $resolver = new FileResolver();
-        $resolver->setFile('./files/passwords');
-        $adapter->setDigestResolver($resolver);
+        $eResolver = new EnvVarsResolver();
+        if ($eResolver->isReady()) {
+            $adapter->setDigestResolver($eResolver);
+        } else {
+            $fResolver = new FileResolver();
+            $fResolver->setFile('./files/passwords');
+            $adapter->setDigestResolver($fResolver);
+        }
 
         $request = $this->getRequest();
         $response = $this->getResponse();

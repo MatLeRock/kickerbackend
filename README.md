@@ -12,7 +12,7 @@ Using composer.phar
 ----------------------------
 
     cd [root-folder]
-    (php composer.phar self-update)     (The `self-update` directive is to ensure you have an up-to-date `composer.phar`available.)
+    (php composer.phar self-update)     | The *self-update* directive is to ensure you have an up-to-date `composer.phar`available.)
     php composer.phar install
     (php composer.phar update)
 
@@ -39,22 +39,22 @@ Add an entry for kickerleague_api.local in your hosts file
 
 Doctrine commands
 -------------------
-cd root-folder
-vendor\bin\doctrine-module  orm:validate-schema         | Test sync of Code (entities) and DB-Schema
-                            orm:schema-tool:create      | Creates DB-schema
+    cd root-folder
+    vendor\bin\doctrine-module  orm:validate-schema         | Test sync of Code (entities) and DB-Schema
+                                orm:schema-tool:create      | Creates DB-schema
 
 Swagger Docs
 ----------------
-http://www.davenewson.com/tutorials/php/rest-api-documentation-in-zend-framework-2-with-swagger
-https://github.com/outeredge/SwaggerModule
+http://www.davenewson.com/tutorials/php/rest-api-documentation-in-zend-framework-2-with-swagger  
+https://github.com/outeredge/SwaggerModule  
 http://zircote.com/swagger-php
 
 API Security 
 ----------------------------
-API is secured with HTTP Digest Authentication. 
-Credentials can be added as Environment Variables (e.g. via Apache SetEnv). 
-Vars to set: API_AUTH_PASS, API_AUTH_USER, API_AUTH_REALM
-API_AUTH_PASS = md5(API_AUTH_USER:API_AUTH_REALM:API_AUTH_PASS)
+API is secured with HTTP Digest Authentication.   
+Credentials can be added as Environment Variables (e.g. via Apache SetEnv).   
+Vars to set: API_AUTH_PASS, API_AUTH_USER, API_AUTH_REALM  
+API_AUTH_PASS = md5(API_AUTH_USER:API_AUTH_REALM:API_AUTH_PASS)    
 
-Alternatively is can be set via passwords-File (/files/passwords).
-Syntax: <username>:<realm>:<password>
+Alternatively is can be set via passwords-File (/files/passwords).  
+Syntax: [username]:[realm]:[password]  

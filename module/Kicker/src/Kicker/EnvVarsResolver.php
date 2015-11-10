@@ -4,6 +4,9 @@ namespace Kicker;
 
 use Zend\Authentication\Adapter\Http\ResolverInterface;
 
+/**
+ * This Class enables HTTP authentication via Environment Variables.
+ */
 class EnvVarsResolver implements ResolverInterface {
 
     private $password;

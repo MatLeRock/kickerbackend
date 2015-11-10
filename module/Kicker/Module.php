@@ -1,9 +1,11 @@
 <?php
-
+/**
+ *  Kicker Module provides REST API Resources 
+ */
 namespace Kicker;
 
 class Module {
-
+    
     public function getAutoloaderConfig() {
         return array(
             'Zend\Loader\ClassMapAutoloader' => array(

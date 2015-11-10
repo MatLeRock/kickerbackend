@@ -12,9 +12,9 @@ Using composer.phar
 ----------------------------
 
     cd [root-folder]
-   (php composer.phar self-update)     (The `self-update` directive is to ensure you have an up-to-date `composer.phar`available.)
+    (php composer.phar self-update)     (The `self-update` directive is to ensure you have an up-to-date `composer.phar`available.)
     php composer.phar install
-   (php composer.phar update)
+    (php composer.phar update)
 
 Apache Server Setup for dev
 ----------------

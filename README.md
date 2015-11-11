@@ -1,6 +1,8 @@
 Kicker League backend built with Zend Framework 2 for use with KickerClient
 =======================
 
+[![Join the chat at https://gitter.im/MatLeRock/kickerbackend](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MatLeRock/kickerbackend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Introduction
 ------------
 This is based on the ZendSkeletonApplication.

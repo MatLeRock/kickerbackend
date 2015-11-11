@@ -1,4 +1,4 @@
-Kicker League backend built with Zend Framework 2 
+Kicker League backend built with Zend Framework 2 for use with KickerClient
 =======================
 
 Introduction
@@ -8,7 +8,7 @@ This is based on the ZendSkeletonApplication.
 Installation
 ------------
 
-Using composer.phar 
+Using composer.phar
 ----------------------------
 
     cd [root-folder]
@@ -49,7 +49,7 @@ http://www.davenewson.com/tutorials/php/rest-api-documentation-in-zend-framework
 https://github.com/outeredge/SwaggerModule  
 http://zircote.com/swagger-php
 
-API Security 
+API Security
 ----------------------------
 API is secured with HTTP Digest Authentication.   
 Credentials can be added as Environment Variables (e.g. via Apache SetEnv).   
